@@ -12,11 +12,38 @@ public class PopProject
         int mes = 1;
         int any = 2024;
         bool validat;
+
+        string actionSelection;
+
         Console.WriteLine("Introdueix el dia, mes i any");
         validat = valida(dia, mes, any);
         Console.WriteLine(valida(dia, mes, any) ? "La data és correcta" : "El format no és correcte");
+
+        Console.WriteLine("Que vols fer?\nSaltar\nCorrer\nAjupir-se\nAmagar-se");
+        actionSelection = Console.ReadLine();
+        actionSelection = actionSelection.ToLower();
+        performAction(actionSelection);
     }
 
+    public static void performAction(string action)
+    {
+        if (action == "saltar")
+        {
+            Console.WriteLine("Salto");
+        } else if (action == "correr")
+        {
+            Console.WriteLine("Corro");
+        }
+        else if (action == "ajupir-se")
+        {
+            Console.WriteLine("M'ajupo");
+        }
+        else if (action == "amagar-se")
+        {
+            Console.WriteLine("M'amago");
+        }
+
+    }
     public static bool valida(int day, int month, int year)
     {
 
